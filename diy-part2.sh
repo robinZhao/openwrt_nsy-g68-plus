@@ -10,6 +10,11 @@
 # See /LICENSE for more information.
 #
 
+wget https://downloads.openwrt.org/releases/24.10.4/targets/rockchip/armv8/openwrt-toolchain-24.10.4-rockchip-armv8_gcc-13.3.0_musl.Linux-x86_64.tar.zst
+tar --use-compress-program=unzstd -xvf openwrt-toolchain-24.10.4-rockchip-armv8_gcc-13.3.0_musl.Linux-x86_64.tar.zst
+mv openwrt-toolchain-24.10.4-rockchip-armv8_gcc-13.3.0_musl.Linux-x86_64/toolchain-aarch64_generic_gcc-13.3.0_musl staging_dir/
+
+git apply patches/uboot.patch
 
 echo -e "\\ndefine Device/nsy_g68-plus
   DEVICE_VENDOR := NSY
