@@ -34,6 +34,8 @@ grep -q 'seewo_sv21 \\$' package/boot/uboot-rockchip/Makefile && sed -i "s/seewo
 mkdir -p target/linux/rockchip/files/arch/arm64/boot/dts/rockchip/
 cp -f $GITHUB_WORKSPACE/configfiles/rk3568-nsy-g68-plus.dts target/linux/rockchip/files/arch/arm64/boot/dts/rockchip/rk3568-nsy-g68-plus.dts
 
+cp -f $GITHUB_WORKSPACE/patches/600-add-dts-nsy-g68-plus.patch target/linux/rockchip/patches-6.6/600-add-dts-nsy-g68-plus.patch
+
 # 集成 nsy_g68-plus WiFi驱动
 mkdir -p package/base-files/files/lib/firmware/mediatek
 cp -f $GITHUB_WORKSPACE/configfiles/mt7916_eeprom.bin package/base-files/files/lib/firmware/mediatek/mt7916_eeprom.bin
