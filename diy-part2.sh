@@ -31,7 +31,7 @@ grep -q 'seewo_sv21 \\$' package/boot/uboot-rockchip/Makefile && sed -i "s/seewo
 
 #cp -f $GITHUB_WORKSPACE/configfiles/swconfig_install package/base-files/files/etc/init.d/swconfig_install
 #chmod 755 package/base-files/files/etc/init.d/swconfig_install
-
+mkdir -p target/linux/rockchip/files/arch/arm64/boot/dts/rockchip/
 cp -f $GITHUB_WORKSPACE/configfiles/rk3568-nsy-g68-plus.dts target/linux/rockchip/files/arch/arm64/boot/dts/rockchip/rk3568-nsy-g68-plus.dts
 
 # 集成 nsy_g68-plus WiFi驱动
