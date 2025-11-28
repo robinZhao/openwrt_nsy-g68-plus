@@ -67,7 +67,9 @@ rockchip_setup_interfaces()
 	lyt,t68m)
 		ucidef_set_interfaces_lan_wan 'lan2 lan3 lan4' 'lan1'
 		;;
-	nsy,g68-plus|\
+	nsy,g68-plus)
+		ucidef_set_interfaces_lan_wan 'eth1 eth2 eth3 eth4' 'eth0'
+		;;
 	bdy,g18-pro)
 		ucidef_add_switch "switch0" \
 			"0:lan" "1:lan" "2:lan" "3:lan" "4:wan" "7t@eth0"
