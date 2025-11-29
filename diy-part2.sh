@@ -9,10 +9,10 @@
 # This is free software, licensed under the MIT License.
 # See /LICENSE for more information.
 #
-mkdir -p staging_dir
-wget https://downloads.openwrt.org/releases/24.10.4/targets/rockchip/armv8/openwrt-toolchain-24.10.4-rockchip-armv8_gcc-13.3.0_musl.Linux-x86_64.tar.zst
-tar --use-compress-program=unzstd -xvf openwrt-toolchain-24.10.4-rockchip-armv8_gcc-13.3.0_musl.Linux-x86_64.tar.zst
-mv openwrt-toolchain-24.10.4-rockchip-armv8_gcc-13.3.0_musl.Linux-x86_64/toolchain-aarch64_generic_gcc-13.3.0_musl staging_dir/
+# mkdir -p staging_dir
+# wget https://downloads.openwrt.org/releases/24.10.4/targets/rockchip/armv8/openwrt-toolchain-24.10.4-rockchip-armv8_gcc-13.3.0_musl.Linux-x86_64.tar.zst
+# tar --use-compress-program=unzstd -xvf openwrt-toolchain-24.10.4-rockchip-armv8_gcc-13.3.0_musl.Linux-x86_64.tar.zst
+# mv openwrt-toolchain-24.10.4-rockchip-armv8_gcc-13.3.0_musl.Linux-x86_64/toolchain-aarch64_generic_gcc-13.3.0_musl staging_dir/
 
 cp patches/201-add-nsy-g68-uboot.patch package/boot/uboot-rockchip/patches/201-add-nsy-g68-uboot.patch
 
@@ -32,7 +32,7 @@ TARGET_DEVICES += nsy_g68-plus" >> target/linux/rockchip/image/armv8.mk
 cp -f $GITHUB_WORKSPACE/configfiles/02_network target/linux/rockchip/armv8/base-files/etc/board.d/02_network
 
 # cp -f $GITHUB_WORKSPACE/configfiles/uboot-Makefile package/boot/uboot-rockchip/Makefile
-grep -q 'seewo_sv21 \\$' package/boot/uboot-rockchip/Makefile && sed -i "s/seewo_sv21 \\\\/seewo_sv21 \\\\\n    nsy_g68-plus \\\\\n    nsy_g16-plus \\\\\n    bdy_g18-pro \\\\/g" package/boot/uboot-rockchip/Makefile || sed -i "s/seewo_sv21/seewo_sv21 \\\\\n    nsy_g68-plus \\\\\n    nsy_g16-plus \\\\\n    bdy_g18-pro/g" package/boot/uboot-rockchip/Makefile
+# grep -q 'seewo_sv21 \\$' package/boot/uboot-rockchip/Makefile && sed -i "s/seewo_sv21 \\\\/seewo_sv21 \\\\\n    nsy_g68-plus \\\\\n    nsy_g16-plus \\\\\n    bdy_g18-pro \\\\/g" package/boot/uboot-rockchip/Makefile || sed -i "s/seewo_sv21/seewo_sv21 \\\\\n    nsy_g68-plus \\\\\n    nsy_g16-plus \\\\\n    bdy_g18-pro/g" package/boot/uboot-rockchip/Makefile
 
 #cp -f $GITHUB_WORKSPACE/configfiles/swconfig_install package/base-files/files/etc/init.d/swconfig_install
 #chmod 755 package/base-files/files/etc/init.d/swconfig_install
