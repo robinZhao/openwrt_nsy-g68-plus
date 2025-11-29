@@ -1,5 +1,5 @@
---- a/package/boot/uboot-rockchip/Makefile
-+++ b/package/boot/uboot-rockchip/Makefile
+--- a/Makefile
++++ b/Makefile
 @@ -311,7 +311,15 @@ define U-Boot/rock5a-rk3588s
      radxa_rock-5a
  endef
@@ -15,4 +15,5 @@
 +  generic-rk3568 \
    nanopc-t4-rk3399 \
    nanopi-r4s-rk3399 \
+
    rock-4c-plus-rk3399 \
