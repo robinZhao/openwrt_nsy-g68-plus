@@ -1,0 +1,18 @@
+--- a/package/boot/uboot-rockchip/Makefile
++++ b/package/boot/uboot-rockchip/Makefile
+@@ -311,7 +311,15 @@
+     radxa_rock-5a
+ endef
+ 
++define U-Boot/generic-rk3568
++  $(U-Boot/rk3568/Default)
++  NAME:=GENERIC RK3568
++  BUILD_DEVICES:= \
++    nsy_g68-plus
++endef
++
+ UBOOT_TARGETS := \
++  generic-rk3568 \
+   nanopc-t4-rk3399 \
+   nanopi-r4s-rk3399 \
+   rock-4c-plus-rk3399 \
